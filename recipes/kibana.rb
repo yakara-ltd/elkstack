@@ -83,6 +83,7 @@ if install_type == 'file'
       home: "#{node['kibana']['install_dir']}/current"
     )
     cookbook 'kibana_lwrp'
+    default_logger true
     subscribes :restart, "template[#{kibana_config}]", :delayed
   end
 
